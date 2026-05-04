@@ -1,5 +1,8 @@
-const express = require("express");
-const cors = require("cors");
+import dotenv from "dotenv";
+dotenv.config();
+console.log("Chave:", process.env.OPENAI_API_KEY);
+import express from "express";
+import cors from "cors";
 
 const app = express();
 const PORT = 3001;
@@ -8,6 +11,7 @@ const PORT = 3001;
 // COLOQUE SUA CHAVE DE API AQUI
 // Você pode usar OpenAI ou qualquer provedor compatível
 // =============================================
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY
 ;
 
 app.use(cors());
