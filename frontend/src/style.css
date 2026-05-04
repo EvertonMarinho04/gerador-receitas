@@ -1,0 +1,50 @@
+:root {
+  --cream: #faf6f0;
+  --warm-white: #fffdf9;
+  --terracotta: #c4622d;
+  --terracotta-light: #e07a4a;
+  --terracotta-dark: #9e4a1e;
+  --forest: #2d4a2d;
+  --forest-light: #3d6b3d;
+  --gold: #c8902e;
+  --gold-light: #e8b050;
+  --charcoal: #2a2420;
+  --charcoal-mid: #4a3f38;
+  --text-muted: #8a7a6e;
+  --border: rgba(196, 98, 45, 0.15);
+  --shadow-warm: 0 8px 40px rgba(196, 98, 45, 0.12);
+  --shadow-card: 0 4px 24px rgba(42, 36, 32, 0.08);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: var(--cream);
+  color: var(--charcoal);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--terracotta-light);
+  border-radius: 3px;
+}
