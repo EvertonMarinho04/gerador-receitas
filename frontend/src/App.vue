@@ -148,7 +148,7 @@ async function gerarReceitas() {
   ingredientesUsados.value = ingredientes.value.trim();
 
   try {
-    const response = await fetch("/receitas", {
+    const response = await fetch("https://gerador-receitas.onrender.com/receitas", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ingredientes: ingredientes.value.trim() }),
