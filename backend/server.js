@@ -1,6 +1,12 @@
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 import dotenv from "dotenv";
 dotenv.config();
-console.log("Chave:", process.env.OPENAI_API_KEY);
+
 import express from "express";
 import cors from "cors";
 
@@ -105,11 +111,18 @@ Regras:
   }
 });
 
-app.get("/", (req, res) => {
-  res.json({ status: "ok", mensagem: "Servidor do Gerador de Receitas rodando!" });
+
+const frontendPath = path.join(__dirname, "../frontend/dist");
+
+app.use(express.static(frontendPath));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(frontendPath, "index.html"));
 });
 
 app.listen(PORT, () => {
   console.log(`\n🍳 Servidor rodando em http://localhost:${PORT}`);
   console.log(`📋 Rota disponível: POST http://localhost:${PORT}/receitas\n`);
 });
+
+
