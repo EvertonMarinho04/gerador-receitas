@@ -7,7 +7,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       "/receitas": {
-        target: "http://localhost:3001",
+        target: "http://gerador-receitas.onrender.com",
         changeOrigin: true,
       },
     },
